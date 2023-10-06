@@ -4,9 +4,21 @@
 #include <QApplication>
 #include <QDebug>
 
+#include <QTranslator>
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    QString qm = a.applicationDirPath() + "/language.qm";
+    if (QFile::exists(qm))
+    {
+        QTranslator* q = new QTranslator;
+        if (q->load(qm))
+        {
+            a.installTranslator(q);
+        }
+    }
 
     MainWindow w;
     w.show();

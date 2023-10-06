@@ -40,6 +40,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    setWindowTitle(tr("Similar File Name Filter"));
+
     QStandardItemModel* m = new QStandardItemModel(this);
     ui->pathview->setModel(m);
     setHeadData();
