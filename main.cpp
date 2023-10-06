@@ -20,6 +20,18 @@ int main(int argc, char *argv[])
         }
     }
 
+    qm = a.applicationDirPath() + "/qt_zh_CN.qm";
+    if (QFile::exists(qm))
+    {
+        QTranslator* q = new QTranslator;
+        if (q->load(qm))
+        {
+            qDebug() << "load cn";
+            a.installTranslator(q);
+        }
+    }
+
+
     MainWindow w;
     w.show();
 
