@@ -18,6 +18,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void hideTest();
+
     QString filtername(const QString& name);
     void sortNames();
     void updateDir(const QString& dir);

@@ -50,6 +50,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::hideTest()
+{
+    ui->test->setVisible(false);
+}
+
 QString sectionNumber(const QString &name, const QString& sec)
 {
     QString rname = name.simplified();
